@@ -1,0 +1,26 @@
+<h2>Lista de Policiais</h2>
+
+<div *ngIf="feedback">{{ feedback }}</div>
+
+<table *ngIf="policiais.length > 0">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>RG Civil</th>
+      <th>RG Militar</th>
+      <th>CPF</th>
+      <th>Data de Nascimento</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let policial of policiais">
+      <td>{{ policial.id }}</td>
+      <td>{{ policial.rg_civil }}</td>
+      <td>{{ policial.rg_militar }}</td>
+      <td>{{ policial.cpf }}</td>
+      <td>{{ policial.data_nascimento | date }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<div *ngIf="policiais.length === 0">Nenhum policial cadastrado.</div>

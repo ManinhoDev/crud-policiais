@@ -1,0 +1,27 @@
+<h2>Cadastro de Policial</h2>
+
+<div *ngIf="feedback" [ngClass]="feedbackClass">{{ feedback }}</div>
+
+<form (ngSubmit)="onSubmit()">
+  <div>
+    <label for="rg_civil">RG Civil:</label>
+    <input id="rg_civil" [(ngModel)]="policial.rg_civil" name="rg_civil" required>
+  </div>
+  <div>
+    <label for="rg_militar">RG Militar:</label>
+    <input id="rg_militar" [(ngModel)]="policial.rg_militar" name="rg_militar" required>
+  </div>
+  <div>
+    <label for="cpf">CPF:</label>
+    <input id="cpf" [(ngModel)]="policial.cpf" name="cpf" required>
+  </div>
+  <div>
+    <label for="data_nascimento">Data de Nascimento:</label>
+    <input id="data_nascimento" type="date" [(ngModel)]="policial.data_nascimento" name="data_nascimento" required>
+  </div>
+  <div>
+    <label for="matricula">Matrícula:</label>
+    <input id="matricula" type="password" [(ngModel)]="policial.matricula" name="matricula" required>
+  </div>
+  <button type="submit">Cadastrar</button>
+</form>
